@@ -12,10 +12,13 @@ const PORT = process.env.PORT || 3001;
 
 // require('dotenv');
 
-// //Handlebars
-// const hbs = exphbs.create({ /* helpers */ });
-// app.engine('handlebars', hbs.engine);
-// app.set('view engine', 'handlebars');
+//Sets our app to use the handlebars engine
+app.set('view engine', 'handlebars');
+//Sets handlebars configurations (we will go through them later on)
+app.engine('handlebars', exphbs({
+layoutsDir: __dirname + '/views/layouts',
+}));
+
 
 //middleware
 app.use(express.json());
@@ -23,7 +26,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-// app.use(routes);
+app.use(routes);
 
 
 // app.get('/', (req, res) => {
