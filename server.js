@@ -19,10 +19,18 @@ app.engine('handlebars', exphbs({
 layoutsDir: __dirname + '/views/layouts',
 }));
 
-
+const sess = {
+    secret: 'Super secret secret',
+    cookie: {maxAge:600000},
+    resave: false,
+    saveUninitialized: true,
+    // store: new SequelizeStore({
+    //   db: sequelize,
+    // }),
+  };
 //middleware
 app.use(express.json());
-// app.use(session(sess))
+app.use(session(sess))
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
