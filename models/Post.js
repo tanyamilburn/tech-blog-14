@@ -35,14 +35,7 @@ Post.init(
         key: 'id',
       },
     },
-    comment_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-          model: 'Comment',
-          key: 'id',
-        },
-      },
+      
       postDate: {
         type: DataTypes.DATE,
         defaultValue: DataTypes.NOW,

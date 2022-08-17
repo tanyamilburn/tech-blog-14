@@ -1,7 +1,7 @@
 const Comment = require('../models/Comment')
 
 const commentData = [
-    {
+    {   username: "tmilburn",
         user_id: 1,
         commentDate: '08/15/2022',
         post_id: 1,
