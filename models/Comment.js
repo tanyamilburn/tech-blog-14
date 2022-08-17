@@ -27,6 +27,10 @@ Comment.init(
         type: DataTypes.DATE,
         defaultValue: DataTypes.NOW,
       },
+    post_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
     },
     {
     sequelize,
